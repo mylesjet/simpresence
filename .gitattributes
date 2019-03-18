@@ -1,0 +1,2 @@
+release-builds/simpresence-win32-x64 filter=lfs diff=lfs merge=lfs -text
+release-builds/simpresence-linux-x64 filter=lfs diff=lfs merge=lfs -text
