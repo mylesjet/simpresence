@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Simpresence</title>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        body {
+            background-color: #212121;
+            display: block;
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            display: block;
+            line-height: 7px;
+            padding-top: 10px;
+        }
+
+        .name {
+            font-family: 'Roboto', sans-serif;
+            color: #fcad2a;
+            display: block;
+            line-height: 7px;
+            padding-bottom: 65px;
+        }
+
+        .callsign-search {
+            font-family: 'Roboto', sans-serif;
+            background: #171717;
+            font-size: 1.2rem;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            caret-color: transparent;
+            outline: none;
+            height: 50px;
+            width: 350px;   
+               
+            }
+
+            .submit {
+                font-family: 'Roboto', sans-serif;
+                background: #fcad2a;
+                font-size: 0.8rem;
+                border: 1px solid transparent;
+                transition: all 0.2s;
+                color: white;
+                text-align: center;
+                border-radius: 20px;
+                outline: none;
+                height: 50px;
+                width: 80px;
+            }
+
+        .callsign-search:focus {
+            box-shadow: 0 0 4px #fcad2a;
+        }
+
+        .callsign-search::-webkit-search-cancel-button {
+            position: relative;
+            right: 800000000px;
+        }
+    </style>
+    <body>
+        <form onsubmit="onSubmit()" name="classicform" action="#" id="form1">
+         <h1 class="title">Simpresence</h1>
+         <p1 class="name">By Myles</p1>
+         <input class="callsign-search" placeholder="ProjectFly Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'ProjectFly Username'" type="search" id="username" name="username">
+         <input class="submit" type="submit" value="Go!" name="submit" id="submitbutton">
+        </form>
+    </body>
+
+    <head>
+        <script>
+            const ipcRenderer = require('electron').ipcRenderer;
+
+            function onSubmit() {
+                event.preventDefault();
+                var name = document.getElementById('username').value;
+                ipcRenderer.send('channel1', name);
+            }
+            
+        </script>
+    </head>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "simpresence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . simpresence --overwrite --asar=false --platform=win32 --arch=x64 --icon=src/icons/win/index_VeF_icon.ico --prune=false --out=release-builds --version-string.CompanyName=Myles --version-string.FileDescription=Simpresence --version-string.ProductName=\"Simpresence\"",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/icons/mac/index_vef_icon_256.icns --prune=false --out=release-builds",
+    "package-linux": "electron-packager . simpresence --overwrite --asar=false --platform=linux --arch=x64 --icon=src/icons/png/index_vef_icon_256.png --prune=false --out=release-builds"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rich-presence": "0.0.8",
+    "discord-rpc": "^3.0.1",
+    "electron": "^4.1.0",
+    "electron-packager": "^13.1.1",
+    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.16",
+    "puppeteer": "^1.13.0",
+    "webpage": "^0.3.0"
+  }
+}
